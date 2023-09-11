@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "dependencies": [
+    {
+      "name": "nil",
+      "version>=": "0.0.1",
+      "features": ["cli"]
+    }
+  ]
+}

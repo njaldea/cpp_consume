@@ -1,6 +1,8 @@
-function(add_test_subdirectory dir)
+set(ENABLE_TEST OFF CACHE BOOL "[0 | OFF - 1 | ON]: build tests?")
+
+function(add_test_subdirectory DIRECTORY)
     if(ENABLE_TEST)
-        add_subdirectory(dir)
+        add_subdirectory(${DIRECTORY})
     endif()
 endfunction()
 

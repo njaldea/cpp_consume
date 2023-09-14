@@ -10,8 +10,8 @@
         }, 
         {
             "kind": "git",
-            "repository": "https://github.com/njaldea/vcpkg-port",
-            "baseline": "e7a6e69a64534d2d4fdf9cdceb9e975b7cf41fdd",
+            "repository": "https://github.com/njaldea/nil",
+            "baseline": "98860ee644411de618463dccc081592f7b03aa51",
             "packages": ["nil"]
         }
     ]

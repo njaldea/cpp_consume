@@ -10,9 +10,9 @@
         }, 
         {
             "kind": "git",
-            "repository": "https://github.com/njaldea/nil",
-            "baseline": "98860ee644411de618463dccc081592f7b03aa51",
-            "packages": ["nil"]
+            "repository": "https://github.com/njaldea/nil-vcpkg-ports",
+            "baseline": "f39d223e153c993097bc17120c310f38bd4476be",
+            "packages": ["nil-gate"]
         }
     ]
 }

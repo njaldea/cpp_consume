@@ -12,15 +12,26 @@ Checks: >
   portability-*,
   readability-*,
   -performance-avoid-endl,
+  -cppcoreguidelines-avoid-magic-numbers,
   -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -readability-magic-numbers,
   -readability-identifier-length,
+  -readability-uppercase-literal-suffix,
   -modernize-use-nodiscard,
   -modernize-use-trailing-return-type,
   -misc-no-recursion,
   -misc-include-cleaner,
   -misc-non-private-member-variables-in-classes,
   -bugprone-exception-escape,
-WarningsAsErrors: '*'
+  -hicpp-uppercase-literal-suffix,
+  -hicpp-signed-bitwise,
+  -bugprone-unused-return-value,
+  -hicpp-vararg,
+  -cppcoreguidelines-pro-type-vararg
+WarningsAsErrors: >
+  *,
+  -bugprone-easily-swappable-parameters,
+  -readability-convert-member-functions-to-static
 HeaderFileExtensions:
   - ''
   - h

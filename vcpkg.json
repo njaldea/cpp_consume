@@ -4,7 +4,7 @@
     {
       "name": "nil",
       "version>=": "0.0.1",
-      "features": ["gate", "service"]
+      "features": ["gate", "service", "clix"]
     }
   ]
 }

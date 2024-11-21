@@ -1,10 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "description": "Collection of libraries from nil",
+  "name": "cpp-consume",
   "dependencies": [
-    {
-      "name": "nil",
-      "version>=": "0.0.1",
-      "features": ["gate", "service", "clix"]
-    }
+    "nlohmann-json",
+    { "name": "nil-xit-test",  "features": ["gtest"] }
   ]
 }

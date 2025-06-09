@@ -1,14 +1,1 @@
-project(cpp_consume)
-
-find_package(nil-xit-test CONFIG REQUIRED COMPONENTS gtest)
-find_package(nlohmann_json CONFIG REQUIRED)
-
-add_executable(
-    ${PROJECT_NAME}
-    main.cpp
-    userland_utils.cpp
-    userland_utils.hpp
-)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE nil::xit-gtest)
-target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
+add_test_subdirectory()

@@ -10,8 +10,9 @@ REPO_PATH=`(realpath $SCRIPT_PATH/..)`
 
 CMAKE_BUILD_TYPE="Release"
 VCPKG_MANIFEST_FEATURES="core"
-ENABLE_SANDBOX="OFF"
+ENABLE_FEATURE_GTEST="OFF"
 ENABLE_TEST="OFF"
+ENABLE_SANDBOX="OFF"
 GENERATOR="Ninja"
 TRIPLET=""
 
@@ -39,8 +40,9 @@ while getopts ":hdtsn" option; do
             ENABLE_TEST="ON";;
         s)
             SANDBOX="sandbox"
-            VCPKG_MANIFEST_FEATURES="${SANDBOX};${VCPKG_MANIFEST_FEATURES}"
-            ENABLE_SANDBOX="ON";;
+            VCPKG_MANIFEST_FEATURES="gtest;${SANDBOX};${VCPKG_MANIFEST_FEATURES}"
+            ENABLE_SANDBOX="ON"
+            ENABLE_FEATURE_GTEST="ON";;
         n)
             TRIPLET="-DVCPKG_TARGET_TRIPLET=nil-libcxx -DVCPKG_HOST_TRIPLET=nil-libcxx";;
         \?)
@@ -63,4 +65,5 @@ cmake                                                                       \
     -DVCPKG_OVERLAY_TRIPLETS=${REPO_PATH}/triplets                          \
     -DENABLE_SANDBOX=${ENABLE_SANDBOX}                                      \
     -DENABLE_TEST=${ENABLE_TEST}                                            \
+    -DENABLE_FEATURE_GTEST=${ENABLE_FEATURE_GTEST}                          \
     ${TRIPLET}

@@ -7,7 +7,7 @@ add_test_executable(step_1 step_1.cpp)
 target_link_libraries(step_1 PRIVATE SUT)
 target_link_libraries(step_1 PRIVATE nil::xit-gtest)
 
-# Step 2: Basic xit-test - no groups needed
+# Step 2: Basic xit-test - needs group for UI files
 add_xit_test(step_2 
     SOURCES step_2.cpp
     GROUPS "group=${CMAKE_CURRENT_SOURCE_DIR}"
@@ -15,7 +15,7 @@ add_xit_test(step_2
 target_link_libraries(step_2 PRIVATE SUT)
 target_link_libraries(step_2 PRIVATE nil::xit-gtest)
 
-# Step 3: Visual testing with output frame - needs group for Svelte files
+# Step 3: Visual testing with output frame - needs group for UI files
 add_xit_test(step_3 
     SOURCES step_3.cpp
     GROUPS "group=${CMAKE_CURRENT_SOURCE_DIR}"
@@ -23,7 +23,7 @@ add_xit_test(step_3
 target_link_libraries(step_3 PRIVATE SUT)
 target_link_libraries(step_3 PRIVATE nil::xit-gtest)
 
-# Step 4: Visual testing with input and output frames - needs group for Svelte files
+# Step 4: Visual testing with input and output frames - needs group for UI files
 add_xit_test(step_4 
     SOURCES step_4.cpp
     GROUPS "group=${CMAKE_CURRENT_SOURCE_DIR}"
@@ -31,7 +31,7 @@ add_xit_test(step_4
 target_link_libraries(step_4 PRIVATE SUT)
 target_link_libraries(step_4 PRIVATE nil::xit-gtest)
 
-# Step 5: File persistence testing - needs group for Svelte files and input file
+# Step 5: File persistence testing - needs group for UI files and input file
 add_xit_test(step_5 
     SOURCES step_5.cpp
     GROUPS "group=${CMAKE_CURRENT_SOURCE_DIR}"

@@ -6,14 +6,14 @@
 
 XIT_FRAME_MAIN("$group/Step_4Main.svelte");
 
-XIT_FRAME_OUTPUT_V("output", "$group/Step_4Output.svelte", Circle)
+XIT_FRAME_OUTPUT_V("output", "$group/Step_5Output.svelte", Circle)
     .value("x", &Circle::x)
     .value("y", &Circle::y)
     .value("radius", &Circle::radius);
 
 XIT_FRAME_TEST_INPUT_V(
     "input",
-    "$group/Step_4Input.svelte",
+    "$group/Step_5Input.svelte",
     nil::xit::gtest::from_file_with_update<Circle, "step_5_input">()
 )
     .value("x", &Circle::x)

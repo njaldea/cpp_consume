@@ -10,9 +10,7 @@ REPO_PATH=`(realpath $SCRIPT_PATH/..)`
 
 CMAKE_BUILD_TYPE="Release"
 VCPKG_MANIFEST_FEATURES="core"
-ENABLE_FEATURE_GTEST="OFF"
 ENABLE_TEST="OFF"
-ENABLE_SANDBOX="OFF"
 GENERATOR="Ninja"
 TRIPLET=""
 
@@ -23,7 +21,6 @@ HELP()
     echo "h         Print this help"
     echo "d         Configure Debug Build (default: Release)"
     echo "t         Enable Tests"
-    echo "s         Enable Sandboxes"
     echo "n         Use libc++ (triplet)"
 }
 
@@ -38,11 +35,6 @@ while getopts ":hdtsn" option; do
             TEST="test"
             VCPKG_MANIFEST_FEATURES="${TEST};${VCPKG_MANIFEST_FEATURES}"
             ENABLE_TEST="ON";;
-        s)
-            SANDBOX="sandbox"
-            VCPKG_MANIFEST_FEATURES="gtest;${SANDBOX};${VCPKG_MANIFEST_FEATURES}"
-            ENABLE_SANDBOX="ON"
-            ENABLE_FEATURE_GTEST="ON";;
         n)
             TRIPLET="-DVCPKG_TARGET_TRIPLET=nil-libcxx -DVCPKG_HOST_TRIPLET=nil-libcxx";;
         \?)
@@ -63,7 +55,5 @@ cmake                                                                       \
     -G${GENERATOR}                                                          \
     -DVCPKG_MANIFEST_FEATURES=${VCPKG_MANIFEST_FEATURES}                    \
     -DVCPKG_OVERLAY_TRIPLETS=${REPO_PATH}/triplets                          \
-    -DENABLE_SANDBOX=${ENABLE_SANDBOX}                                      \
     -DENABLE_TEST=${ENABLE_TEST}                                            \
-    -DENABLE_FEATURE_GTEST=${ENABLE_FEATURE_GTEST}                          \
     ${TRIPLET}
